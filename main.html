@@ -1,0 +1,29 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+
+<div id="map" style="width: 100%; height: 400px;"></div>
+
+<script>
+  function initMap() {
+    // Coordenadas de latitud y longitud recibidas del servidor
+    const latitud = 40.7128;  // Reemplaza con la latitud que recibiste
+    const longitud = -74.0060;  // Reemplaza con la longitud que recibiste
+
+    const ubicacion = { lat: latitud, lng: longitud };
+
+    // Crear un mapa en el elemento 'map'
+    const mapa = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10, // Puedes ajustar el nivel de zoom
+      center: ubicacion
+    });
+
+    // Agregar un marcador en la ubicación
+    const marcador = new google.maps.Marker({
+      position: ubicacion,
+      map: mapa
+    });
+  }
+</script>
+
+<script>
+  initMap();
+</script>
